@@ -1,23 +1,16 @@
 # EverydayExtensionsCsharp
+This project contains examples of the `C#` extensions for everyday usage.
+I am using them in each of my projects and happy about it :)
 
 
-## String's extensions
-
-```csharp
-public static bool IsNullOrEmpty(this string value)
-{
-    return string.IsNullOrEmpty(value);
-}
-```
+## Collection extensions
 
 ```csharp
-public static bool NotNullOrEmpty(this string value)
+public static List<T> NullToEmpty<T>(this List<T> source)
 {
-    return !string.IsNullOrEmpty(value);
+    return source ?? new List<T>();
 }
 ```
-
-## Array
 
 ```csharp
 public static T[] ExpandArray<T>(this T[] array, T item)
@@ -33,6 +26,22 @@ public static T[] ExpandArray<T>(this T[] array, T item)
     expandedArray[array.Length] = item;
 
     return expandedArray;
+}
+```
+
+## String's extensions
+
+```csharp
+public static bool IsNullOrEmpty(this string value)
+{
+    return string.IsNullOrEmpty(value);
+}
+```
+
+```csharp
+public static bool NotNullOrEmpty(this string value)
+{
+    return !string.IsNullOrEmpty(value);
 }
 ```
 
